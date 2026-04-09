@@ -97,8 +97,10 @@ img {
 main {
   gap: 4rem;
   display: flex;
+  margin: auto;
   padding: 2.25rem;
   flex-direction: column;
+  width: min(90rem, 100%);
 }
 header img {
   max-width: 50%;
