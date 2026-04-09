@@ -110,10 +110,11 @@ button {
     justify-content: space-between;
   }
   .elements {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(50%, auto) 1fr;
   }
   article {
     text-align: start;
+    font-size: 1.125rem;
     align-items: flex-start;
   }
   button {

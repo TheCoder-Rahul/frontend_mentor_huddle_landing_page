@@ -24,12 +24,12 @@ Users should be able to:
 
 ### Screenshot
 
-![Design screenshot](https://github.com/TheCoder-Rahul/frontend_mentor_single_price_grid/blob/main/project_screenshot.png)
+![Design screenshot](https://github.com/TheCoder-Rahul/frontend_mentor_huddle_landing_page/blob/main/project_screenshot.png)
 
 ### Links
 
-- 👉 [Solution URL](https://github.com/TheCoder-Rahul/frontend_mentor_single_price_grid.git)
-- 👉 [Live Site URL](https://thecoder-rahul.github.io/frontend_mentor_single_price_grid/)
+- 👉 [Solution URL](https://github.com/TheCoder-Rahul/frontend_mentor_huddle_landing_page.git)
+- 👉 [Live Site URL](https://thecoder-rahul.github.io/frontend_mentor_huddle_landing_page/)
 
 ## My process
 
@@ -45,11 +45,163 @@ Users should be able to:
 Check my code snippets below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<main class="container">
+  <header>
+    <img src="./images/logo.svg" alt="Huddle Transparent Scalable Logo">
+  </header>
+  <section class="elements">
+    <figure>
+      <img src="./images/illustration-mockups.svg" alt="Mockups Illustration">
+    </figure>
+    <article>
+      <h1>Build The Community Your Fans Will Love</h1>
+      <p>Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion.</p>
+      <button type="button">Register</button>
+    </article>
+  </section>
+  <section class="social_links">
+    <a class="social_icon" href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+    <a class="social_icon" href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+    <a class="social_icon" href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+  </section>
+</main>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white: hsl(0, 0%, 100%);
+  --purple-700: hsl(257, 40%, 49%);
+  --magenta-400: hsl(300, 69%, 71%);
+  --body-font: "Open Sans", sans-serif;
+  --heading-font: "Poppins", sans-serif;
+}
+body {
+  font-size: 1rem;
+  color: var(--white);
+  font-family: var(--body-font);
+  background: url(./images/bg-mobile.svg) no-repeat var(--purple-700);
+}
+h1 {
+  font-weight: 600;
+  font-family: var(--heading-font);
+  font-size: clamp(1.5rem, calc(3vw + 1rem), 2.9375rem);
+}
+img {
+  height: auto;
+  max-width: 100%;
+}
+main {
+  gap: 4rem;
+  display: flex;
+  padding: 2.25rem;
+  flex-direction: column;
+}
+header img {
+  max-width: 50%;
+  display: flex;
+}
+.elements {
+  gap: 3rem;
+  display: grid;
+}
+article {
+  gap: 1.5rem;
+  display: flex;
+  line-height: 1.5;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+button {
+  width: 70%;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 5rem;
+  padding: 0.5rem 1rem;
+  color: var(--purple-700);
+  border-color: transparent;
+  font-family: var(--heading-font);
+  box-shadow: 0 0.5rem 1rem hsla(192, 76%, 10%, 0.2);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  &:hover, &:focus {
+    color: var(--white);
+    background-color: var(--magenta-400);
+  }
+}
+.social_links {
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social_icon {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.125rem;
+  border-radius: 50%;
+  text-align: center;
+  color: var(--white);
+  font-size: 0.875rem;
+  line-height: 1.675rem;
+  border: 1px solid var(--white);
+  -webkit-transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+
+  &:hover, &:focus {
+    color: var(--magenta-400);
+    border-color: var(--magenta-400);
+  }
+}
+.attribution { font-size: 0.6875rem; text-align: center; }
+.attribution a { color: var(--magenta-400); }
+@media (min-width: 48rem) {
+  body {
+    height: 100vh;
+    background-image: url(./images/bg-desktop.svg);
+    background-size: cover;
+  }
+  main {
+    height: 100%;
+    padding: 4rem;
+    justify-content: space-between;
+  }
+  .elements {
+    grid-template-columns: minmax(50%, auto) 1fr;
+  }
+  article {
+    text-align: start;
+    font-size: 1.125rem;
+    align-items: flex-start;
+  }
+  button {
+    width: auto;
+    font-size: 1rem;
+    padding: 0.75rem 4rem;
+  }
+  .social_links {
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+  .social_icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    line-height: 2.125rem;
+  }
+  .attribution { position: absolute; inset: auto 0 0.5rem; }
 }
 ```
 
